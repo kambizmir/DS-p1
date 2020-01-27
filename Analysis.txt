@@ -1,0 +1,32 @@
+Task 0:
+Time to get first and last elements of Python list is O(1) because the list is stored in consecutive memory locations which are addressable by their index and each element can be accessed in constant time.
+
+Task 1:
+To get the total number of records, the code iterates over all calls and texts and stores all phone numbers in a dictionary as key/value pair, for calls and texts. The total number of unique numbers will be the length of the dictionary.
+For iteration, the order of operations is O(number of calls +number of texts). In Python the time complexity of len function of a dictionary is of O(1), so the overall time complexity is O(number of calls +number of texts).
+
+Task 2:
+To find the longest call time, the code iterates over all calls and for each caller or receiver phone number, adds the phone number as key and adds up the call time as the value in dictionary. The time complexity for this part is O(number of calls) because for each call record there is a constant time of checking or storing in dictionary.
+Then the code iterates over keys of the dictionary and finds the maximum by comparing. This iteration will be O(number of dictionary entries) which is a fraction of total number of call records. So the first part dominates the second part and the overall time complexity will be O(number of calls).
+
+Task 3:
+The code iterates over all call records and for each call record does some processing which is of fixed order. So the complexity for this part of the code is O(number of calls).
+Then before printing the result, the codes should be sorted. Depending on the sort algorithm, the time complexity can vary from O(n * log n) for average to O(n^2) in worst case, which n is the number of codes.
+
+So the total time complexity for worst case will be O(number of calls) +  O(n^2). If the number of codes is significantly smaller than the number of calls, the second term can be ignored and the overall complexity will be O(number of calls).
+
+Percentage calculation is a single operation and is O(1).
+
+Task 4:
+The code first creates a dictionary of the phone numbers with values showing if it has received call or not. This part is of O(number of calls). Then it iterates over the texts and changes the dictionary for the numbers which sent or received text. This part is of O(number of texts). In third step it iterates over the dictionary to find the entries which can be telemarketers and add them to a list. This part is of O(total phone numbers) because the map contains all phone distinct numbers in 2 files. Finally the list is sorted which has the average of O(n * log n) to worst case of O(n^^2) in which n is the number of potential telemarketers.
+
+The overall (worst case) time complexity is: O(number of calls) + O(number of texts) + O(total phone numbers) +  O(n^^2).  (n is the number of telemarketers).
+
+If the number of telemarketers is significantly smaller than other numbers, the effective complexity reduces to:
+
+O(number of calls + number of texts) + O(total phone numbers) 
+
+and if the number of total phone numbers is very smaller than total records the order will be:
+
+O(number of calls + number of texts)
+
