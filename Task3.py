@@ -62,7 +62,7 @@ for call in calls:
 		else:
 			idx = call[1].find(' ')
 			if idx > 0:		
-				codes[call[1][:idx]] = call[1][:idx]
+				codes[call[1][:4]] = call[1][:4]
 
 codes_list = sorted(codes.keys())
 
@@ -72,7 +72,7 @@ for code in codes_list:
 
 print("\n")
 
-print ("{:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore." .format (incoming_banglor_calls/outgoing_banglor_calls) )
+print ("{:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore." .format ((incoming_banglor_calls/outgoing_banglor_calls) *100) )
 
 
 

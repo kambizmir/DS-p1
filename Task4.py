@@ -29,18 +29,18 @@ marketing_map = {}
 marketing_list = []
 
 for call in calls:
-	if marketing_map.get(call[0], None) == None:
-		marketing_map[call[0]] = True
+	marketing_map[call[0]] = True
 
+for call in calls:
 	if marketing_map.get(call[1],None) == True:
 		marketing_map[call[1]] = False
 
 for text in texts:
 	if marketing_map.get(text[0]) == True:
-		marketing_map.get(text[0])
+		marketing_map[text[0]] = False
 
 	if marketing_map.get(text[1]) == True:
-		marketing_map.get(text[1])
+		marketing_map[text[1]] = False
 
 for num in marketing_map:
 	if marketing_map[num]:
@@ -49,9 +49,6 @@ for num in marketing_map:
 print("These numbers could be telemarketers: ")
 for num in sorted(marketing_list):
 	print(num)
-
-
-
 
 
 
